@@ -1,4 +1,6 @@
 import praw
+import os
+f = open("dailyVideoData.txt", "a")
 
 authfile = open('authfile.txt', 'r')
 authLines = authfile.readlines()
@@ -14,11 +16,15 @@ reddit = praw.Reddit( #creating a read only instance of reddit with the credenti
 
 counter = 0
 for submission in reddit.subreddit("livestreamfail").top("day"):
-    print(submission.title)
-    print(submission.url)
-    print(submission.author)
+    if(submission.url.startswith("https://clips.twitch.tv/")):
+        os.system("python twitch-dl.1.16.0.pyz download -q source " + submission.url)
+        f.write(str(submission.author) + "\n")
+        f.write(str(submission.title)  + "\n")
+        f.write(str(submission.url) + "\n")
+
     counter+=1
-    if(counter >= 25):
+    if(counter >= 2):
         break
     
+f.close()
 
