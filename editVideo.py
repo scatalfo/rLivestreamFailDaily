@@ -19,13 +19,13 @@ def editClips():
             #print(linenum)
             vfc = VideoFileClip(line[:-1]) #grab the video file (minus the end line character)
             #print(dailyVideoData[linenum + 2] + " posted by: " + dailyVideoData[linenum+1])
-            tc = TextClip(dailyVideoData[linenum + 2] + " posted by: " + dailyVideoData[linenum+1], fontsize=70,color='black',align="South", stroke_color='white')
+            tc = TextClip(dailyVideoData[linenum + 2] + " posted by: " + dailyVideoData[linenum+1], size = (1920, 1080), fontsize=70,color='black', method='caption',align="South", stroke_color='white')
             tc = tc.set_fps(60)
             tc = tc.set_duration(5)
             comp = CompositeVideoClip([vfc, tc])
             editedClips.append(comp) #add the composite of the video and text to the clips list
             if(linenum == 0):
-                comp.save_frame("thumbnail.png", t=0, withmask=True)
+                comp.save_frame("thumbnail.png", t=0, withmask=True) #generate our YouTube thumbnail from the most popular clip
 
         linenum+=1 #iteration
     final_clip = concatenate_videoclips(editedClips, method="compose") #concat edited clips together

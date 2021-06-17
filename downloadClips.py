@@ -31,7 +31,7 @@ for submission in reddit.subreddit("livestreamfail").top("day"): #loop through t
 
 
     counter+=1
-    if(counter >= 2): #amount of posts we will look through for clips
+    if(counter >= 15): #amount of posts we will look through for clips
         break
     
 f.close()
