@@ -1,6 +1,7 @@
 import praw
 import os
 import editVideo
+import uploadVideo
 f = open("dailyVideoData.txt", "a") #create our daily video data file for editing purposes (it will contain all the info for editing)
 
 authfile = open('authfile.txt', 'r') #open the auth file to get our reddit credentials
@@ -30,11 +31,11 @@ for submission in reddit.subreddit("livestreamfail").top("day"): #loop through t
 
 
     counter+=1
-    if(counter >= 11): #amount of posts we will look through for clips
+    if(counter >= 2): #amount of posts we will look through for clips
         break
     
 f.close()
 
 editVideo.editClips()
 editVideo.deleteOldVideos()
-
+uploadVideo.uploadVideo()
