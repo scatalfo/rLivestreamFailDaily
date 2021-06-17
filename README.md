@@ -1,5 +1,5 @@
 # rLivestreamFailDaily
-Bot to upload the daily hot posts of livestreamfail to a youtube channel that will do all the following:
+Bot to upload the daily top posts of /r/LivestreamFail to a youtube channel that will do all the following:
 - download clips from livestreamfail subreddit ✅
 - save top comments from the subreddit 
 - save title of the clip on the subreddit ✅
