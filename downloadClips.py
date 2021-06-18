@@ -1,5 +1,6 @@
 import praw
 import os
+from os import path
 import editVideo
 import uploadVideo
 def downloadClips():
@@ -24,15 +25,15 @@ def downloadClips():
             with open('output.txt', 'r') as output: 
                 last_line = output.readlines()[-1]
                 f.write(last_line[12:]) #write the file name (which we parsed from the command line output), into the daily video data file
-
-            f.write(str(submission.author) + "\n") #including additional information in the daily video data file
-            f.write(str(submission.title)  + "\n")
-            f.write(str(submission.url) + "\n")
+                f.write(str(submission.author) + "\n") #including additional information in the daily video data file
+                f.write(str(submission.title)  + "\n")
+                f.write(str(submission.url) + "\n")
+                print("check passed")
             os.remove("output.txt") #deleting our command line output file that was used for parsing
 
 
         counter+=1
-        if(counter >= 2): #amount of posts we will look through for clips
+        if(counter >= 15): #amount of posts we will look through for clips
             break
         
     f.close()

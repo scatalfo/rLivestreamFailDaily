@@ -10,10 +10,10 @@ def job(t):
     downloadClips.downloadClips()
     editVideo.editClips()
     uploadVideo.uploadVideo()
-    editVideo.deleteOldVideos()
+    #editVideo.deleteOldVideos()
     return
 
-schedule.every().day.at("13:00").do(job,'It is 01:00 PM')
+schedule.every().day.at("14:30").do(job,'It is 02:30 PM')
 
 while True:
     schedule.run_pending()

@@ -17,7 +17,12 @@ def editClips():
     for line in dailyVideoData: 
         if(linenum%4 == 0): #if it is the video file name that was parsed 
             #print(linenum)
-            vfc = VideoFileClip(line[:-1]) #grab the video file (minus the end line character)
+            if(os.path.isfile(line[:-1])):
+                vfc = VideoFileClip(line[:-1]) #grab the video file (minus the end line character)
+                print("Check Passed")
+            else:
+                print("Check Failed")
+                continue
             #print(dailyVideoData[linenum + 2] + " posted by: " + dailyVideoData[linenum+1])
             tc = TextClip(dailyVideoData[linenum + 2] + " posted by: " + dailyVideoData[linenum+1], size = (1920, 1080), fontsize=70,color='black', method='caption',align="South", stroke_color='white')
             tc = tc.set_fps(60)
