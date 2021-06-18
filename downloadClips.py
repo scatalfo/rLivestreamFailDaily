@@ -37,5 +37,5 @@ for submission in reddit.subreddit("livestreamfail").top("day"): #loop through t
 f.close()
 
 editVideo.editClips()
-editVideo.deleteOldVideos()
 uploadVideo.uploadVideo()
+editVideo.deleteOldVideos()
