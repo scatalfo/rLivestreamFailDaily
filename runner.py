@@ -13,7 +13,7 @@ def job(t):
     editVideo.deleteOldVideos()
     return
 
-schedule.every().day.at("23:53").do(job,'It is 01:00')
+schedule.every().day.at("13:00").do(job,'It is 01:00 PM')
 
 while True:
     schedule.run_pending()
