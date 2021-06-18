@@ -23,7 +23,7 @@ def uploadVideo():
     # setting snippet
     t = datetime.datetime.now()
     video.set_title("The top clips of /r/Livestreamfail for " + t.strftime('%b %d, %Y'))
-    video.set_description("This is an open source project created and maintained by Sam Catalfo (@scatalfo on GitHub). https://github.com/scatalfo/rLivestreamFailDaily")
+    video.set_description("This is an open source project created and maintained by Sam Catalfo (@scatalfo on GitHub).")
     video.set_tags(["LivestreamFail", "Live", "Stream", "Fail"])
     #video.set_category("Entertainment")
     video.set_default_language("en-US")
@@ -31,7 +31,7 @@ def uploadVideo():
     # setting status
     video.set_embeddable(True)
     video.set_license("creativeCommon")
-    video.set_privacy_status("public")
+    video.set_privacy_status("private")
     video.set_public_stats_viewable(True)
 
     # setting thumbnail
