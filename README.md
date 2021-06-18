@@ -7,3 +7,6 @@ Bot to upload the daily top posts of /r/LivestreamFail to a youtube channel that
 - export the video ✅ 
 - delete clips from local storage ✅
 - upload the video to youtube channel ✅
+
+LINK TO CHANNEL:
+https://www.youtube.com/channel/UCd8VSFgsW-KW1HL1k0drEWA
